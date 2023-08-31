@@ -1,4 +1,5 @@
 {
+  "historyApiFallback": true,
   "compilerOptions": {
     "baseUrl": "src"
   },
