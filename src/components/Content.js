@@ -6,9 +6,9 @@ import Collection from "views/Collection";
 import { Switch, Route } from "react-router-dom";
 function Content() {
   return (
-    <main className="flex-auto">
+    <main className="flex-auto overflow-auto">
       <NavBar />
-      <div className="px-8 pt-2">
+      <div className="px-8 py-5">
         <Switch>
           <Route path="/search">
             <Search />
