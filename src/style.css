@@ -1025,6 +1025,10 @@ html, body, #root {
   line-height: 1rem;
 }
 
+.text-\[0\.688rem\] {
+  font-size: 0.688rem;
+}
+
 .font-semibold {
   font-weight: 600;
 }

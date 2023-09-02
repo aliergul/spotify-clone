@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { Icon } from "icons/Icons";
-import { Range, getTrackBackground } from "react-range";
-function Player() {
-  const STEP = 0.1;
-  const MIN = 0;
-  const MAX = 100;
+import { useAudio } from "react-use";
+import { secondsToTime } from "utils";
+import CustomRange from "components/CustomRange";
 
-  const [values, setValues] = useState([50]);
+function Player() {
+  const [audio, state, controls, ref] = useAudio({
+    src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+  });
+
   return (
     <div className="flex items-center justify-between px-4">
       <div className="min-w-[11.25rem] w-[30%]">sol</div>
@@ -18,8 +20,11 @@ function Player() {
           <button className="w-8 h-8 flex items-center justify-center text-white text-opacity-70 hover:text-opacity-100">
             <Icon size={16} name="playerPrev" />
           </button>
-          <button className="w-8 h-8 flex items-center justify-center bg-white text-black rounded-full hover:scale-[1.06]">
-            <Icon size={16} name="play" />
+          <button
+            onClick={controls[state?.playing ? "pause" : "play"]}
+            className="w-8 h-8 flex items-center justify-center bg-white text-black rounded-full hover:scale-[1.06]"
+          >
+            <Icon size={16} name={state?.playing ? "pause" : "play"} />
           </button>
           <button className="w-8 h-8 flex items-center justify-center text-white text-opacity-70 hover:text-opacity-100">
             <Icon size={16} name="playerNext" />
@@ -28,49 +33,21 @@ function Player() {
             <Icon size={16} name="repeat" />
           </button>
         </div>
-        <div className="w-full">
-          <Range
-            values={values}
-            step={STEP}
-            min={MIN}
-            max={MAX}
-            onChange={(values) => setValues(values)}
-            renderTrack={({ props, children }) => (
-              <div
-                onMouseDown={props.onMouseDown}
-                onTouchStart={props.onTouchStart}
-                className="w-full h-7 flex group"
-                style={props.style}
-              >
-                <div
-                  ref={props.ref}
-                  className="h-1 w-full rounded-md self-center"
-                  style={{
-                    background: getTrackBackground({
-                      values: values,
-                      colors: ["#1db954", "#535353"],
-                      min: MIN,
-                      max: MAX,
-                    }),
-                  }}
-                >
-                  {children}
-                </div>
-              </div>
-            )}
-            renderThumb={({ props, isDragged }) => (
-              <div
-                {...props}
-                className={`h-3 w-3 rounded-full bg-white ${
-                  !isDragged ? "opacity-0" : ""
-                } group-hover:opacity-100`}
-                style={{
-                  ...props.style,
-                  boxShadow: "0px 2px 4px 0 rgb(0 0 0 / 50%)",
-                }}
-              />
-            )}
+        <div className="w-full flex items-center gap-x-2">
+          {audio}
+          <div className="text-[0.688rem] text-white text-opacity-70">
+            {secondsToTime(state?.time)}
+          </div>
+          <CustomRange
+            step={0.1}
+            min={0}
+            max={state?.duration || 1}
+            value={state?.time}
+            onChange={(value) => controls.seek(value)}
           />
+          <div className="text-[0.688rem] text-white text-opacity-70">
+            {secondsToTime(state?.duration)}
+          </div>
         </div>
       </div>
       <div className="min-w-[11.25rem] w-[30%] flex justify-end">sağ</div>
