@@ -616,6 +616,10 @@ html, body, #root {
   position: relative;
 }
 
+.\!relative {
+  position: relative !important;
+}
+
 .inset-0 {
   inset: 0px;
 }
@@ -668,8 +672,44 @@ html, body, #root {
   top: 50%;
 }
 
+.bottom-4 {
+  bottom: 1rem;
+}
+
+.bottom-3 {
+  bottom: 0.75rem;
+}
+
+.bottom-36 {
+  bottom: 9rem;
+}
+
+.left-8 {
+  left: 2rem;
+}
+
+.right-6 {
+  right: 1.5rem;
+}
+
+.top-8 {
+  top: 2rem;
+}
+
 .z-10 {
   z-index: 10;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.z-auto {
+  z-index: auto;
 }
 
 .mx-6 {
@@ -725,6 +765,22 @@ html, body, #root {
   margin-bottom: 2rem;
 }
 
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.mb-1\.5 {
+  margin-bottom: 0.375rem;
+}
+
+.mt-0 {
+  margin-top: 0px;
+}
+
+.mt-0\.5 {
+  margin-top: 0.125rem;
+}
+
 .line-clamp-1 {
   overflow: hidden;
   display: -webkit-box;
@@ -737,6 +793,10 @@ html, body, #root {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+}
+
+.block {
+  display: block;
 }
 
 .flex {
@@ -807,6 +867,10 @@ html, body, #root {
   height: 3rem;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -869,6 +933,14 @@ html, body, #root {
 
 .w-full {
   width: 100%;
+}
+
+.w-16 {
+  width: 4rem;
+}
+
+.w-24 {
+  width: 6rem;
 }
 
 .min-w-\[11\.25rem\] {
@@ -947,6 +1019,10 @@ html, body, #root {
   flex-direction: column;
 }
 
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
 .items-center {
   align-items: center;
 }
@@ -984,6 +1060,20 @@ html, body, #root {
 
 .gap-y-8 {
   row-gap: 2rem;
+}
+
+.gap-x-5 {
+  -webkit-column-gap: 1.25rem;
+          column-gap: 1.25rem;
+}
+
+.gap-x-3 {
+  -webkit-column-gap: 0.75rem;
+          column-gap: 0.75rem;
+}
+
+.self-end {
+  align-self: flex-end;
 }
 
 .self-center {
@@ -1098,6 +1188,14 @@ html, body, #root {
   --tw-gradient-to: #93c5fd var(--tw-gradient-to-position);
 }
 
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
 .object-cover {
   object-fit: cover;
 }
@@ -1200,12 +1298,21 @@ html, body, #root {
   line-height: 1rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .font-semibold {
   font-weight: 600;
 }
 
 .font-medium {
   font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .tracking-tight {
@@ -1255,6 +1362,18 @@ html, body, #root {
   opacity: 0.7;
 }
 
+.opacity-25 {
+  opacity: 0.25;
+}
+
+.opacity-30 {
+  opacity: 0.3;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
 .shadow-spotify {
   --tw-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
   --tw-shadow-colored: 0 2px 4px 0 var(--tw-shadow-color);
@@ -1264,6 +1383,12 @@ html, body, #root {
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.blur-md {
+  --tw-blur: blur(12px);
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .transition-all {

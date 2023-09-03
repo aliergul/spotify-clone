@@ -9,7 +9,7 @@ function Auth() {
     avatar: "https://i.scdn.co/image/ab67757000003b82d54c464e27bf1cc8a276f7a3",
   };
   return (
-    <Menu as="nav" className={"relative"}>
+    <Menu as="nav" className={"relative z-10"}>
       {({ open }) => (
         <>
           <Menu.Button
