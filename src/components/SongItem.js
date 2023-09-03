@@ -20,7 +20,7 @@ function SongItem({ item }) {
     }
   };
   const dispatch = useDispatch();
-  const { current } = useSelector((state) => state.player);
+  const { current, playing } = useSelector((state) => state.player);
 
   const updateCurrent = () => {
     dispatch(setCurrent(item));
@@ -44,7 +44,10 @@ function SongItem({ item }) {
           onClick={updateCurrent}
           className="w-10 h-10 rounded-full bg-primary absolute bottom-2 right-2 items-center justify-center hidden group-hover:flex group-focus:flex"
         >
-          <Icon name={current?.id === item?.id ? "pause" : "play"} size={16} />
+          <Icon
+            name={current?.id === item.id && playing ? "pause" : "play"}
+            size={16}
+          />
         </button>
       </div>
       <h6 className="overflow-hidden overflow-ellipsis whitespace-nowrap text-base font-semibold">
