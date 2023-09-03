@@ -11,9 +11,10 @@ function Search() {
         <Icon size={24} name="search" />
       </label>
       <input
+        autoFocus={true}
         type="text"
         id="search-input"
-        className="h-10 bg-white rounded-3xl pl-12 outline-none text-black text-sm placeholder-black/50 max-w-full w-[22.75rem]"
+        className="h-10 bg-white rounded-3xl pl-12 outline-none text-black font-medium text-sm placeholder-black/50 max-w-full w-[22.75rem]"
         placeholder="Sanatçılar, şarkılar veya podcast'ler"
       />
     </div>
